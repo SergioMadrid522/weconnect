@@ -1,0 +1,10 @@
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 25px 13px;
+  .Projects,
+  .credits {
+    padding: 13px;
+  }
+}
