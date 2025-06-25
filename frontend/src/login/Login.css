@@ -1,0 +1,90 @@
+.main-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.main-content .logo {
+  max-width: 500px;
+}
+.main-content .logo h3 {
+  color: #2596be;
+}
+.main-content .logo img {
+  width: 100%;
+}
+.main-content .logo .catchphrase {
+  text-align: center;
+  font-size: 18px;
+}
+.main-content .login-wrap {
+  display: inherit;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  border: 1px solid gainsboro;
+  border-radius: 6px;
+  box-shadow: 0 5px 10px gainsboro;
+  padding: 25px;
+  /* .line {
+    p::before {
+      content: "";
+      width: 100%;
+
+      position: absolute;
+      left: 0;
+      border: 4px solid gainsboro;
+    }
+  } */
+}
+.main-content .login-wrap a {
+  color: #e9731a;
+  -webkit-text-decoration: underline #e38c48;
+          text-decoration: underline #e38c48;
+}
+.main-content .login-wrap form {
+  text-align: center;
+  width: 325px;
+}
+.main-content .login-wrap form button {
+  background-color: #4ea8c8;
+  border: none;
+  border-radius: 7px;
+  color: #fcfcf7;
+  cursor: pointer;
+  width: 130px;
+  padding: 7px;
+  margin: 15px 0;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.4s ease;
+  margin-bottom: 10px;
+}
+.main-content .login-wrap form button:hover {
+  background-color: #2596be;
+  box-shadow: 0 5px 10px gainsboro;
+}
+.main-content .login-wrap form input {
+  border: 1px solid gainsboro;
+  border-radius: 6px;
+  width: 80%;
+  padding: 10px;
+  display: block;
+  margin: 0 auto;
+}
+.main-content .login-wrap form input:last-of-type {
+  margin-top: 16px;
+}
+.main-content .login-wrap .more-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-direction: column;
+}
+
+main {
+  width: 100%;
+  margin: auto;
+}/*# sourceMappingURL=Login.css.map */
