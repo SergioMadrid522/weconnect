@@ -1,7 +1,7 @@
 import type { ProjectListProps } from "../../type.ts";
 function ProjectList({ projects }: ProjectListProps) {
   return (
-    <div className="Projects">
+    <div className="projects">
       <h3>Projects</h3>
       <ul>
         {projects.map((project, index) => (

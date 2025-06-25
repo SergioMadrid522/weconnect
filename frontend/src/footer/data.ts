@@ -12,6 +12,21 @@ export const projects = [
     projectName: "Fabian Gallery",
   },
 ];
+
+export const languages = [
+  {
+    data: "",
+    language: "English",
+  },
+  {
+    data: "",
+    language: "Spanish",
+  },
+  {
+    data: "",
+    language: "Français",
+  },
+];
 export const credits = [
   "Made with ❤️ by Fabian",
   "Powered by React & Figma",

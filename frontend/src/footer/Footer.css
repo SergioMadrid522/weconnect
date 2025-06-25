@@ -4,7 +4,8 @@
   flex-wrap: wrap;
   padding: 25px 13px;
 }
-.footer-content .Projects,
+.footer-content .projects,
+.footer-content .languages,
 .footer-content .credits {
   padding: 13px;
 }
