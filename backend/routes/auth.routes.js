@@ -8,6 +8,11 @@ const router = express.Router();
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
   try {
+    if (!email || !password) {
+      return res
+        .status(400)
+        .json({ message: "Email and password are required" });
+    }
     const [rows] = await connection.query(
       `SELECT * FROM users WHERE EMAIL = ?`,
       [email]
@@ -32,6 +37,11 @@ router.post("/login", async (req, res) => {
 router.post("/register", async (req, res) => {
   const { username, email, password } = req.body;
   try {
+    if (!username || !email || !password) {
+      return res
+        .status(400)
+        .json({ message: "Email and password are required" });
+    }
     const [emailsRow] = await connection.query(
       "SELECT * FROM users WHERE email = ?",
       [email]

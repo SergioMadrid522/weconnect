@@ -18,20 +18,20 @@
             <h3>Talk. Share. Connect.</h3>
           </div>
         </div>
-        <div class="login-wrap">
-          <form id="login-form">
+        <div class="wrap">
+          <form id="form">
             <input type="email" id="email-input" placeholder="Email" />
             <input type="password" id="password-input" placeholder="Password" />
             <button type="submit">Login</button>
           </form>
+          <p id="response-message"></p>
           <div class="more-info">
             <a href="./src/recover-pass/recoverPassword.html"
               >Forgot password?</a
             >
             <p>
-              Don't you have an account? <a href="./src/register/register.html"
-                >Register here!</a
-              >
+              Don't you have an account?
+              <a href="./src/register/register.html">Register here!</a>
             </p>
           </div>
         </div>
@@ -53,6 +53,7 @@
         </div>
       </div>
     </footer>
-    <script type="module" src="./js/footerRender.js"></script>
+    <script src="./src/js/auth/loginValidation.js"></script>
+    <script type="module" src="./src/js/footerRender.js"></script>
   </body>
 </html>

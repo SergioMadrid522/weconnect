@@ -18,7 +18,7 @@
   text-align: center;
   font-size: 18px;
 }
-.main-content .login-wrap {
+.main-content .wrap {
   display: inherit;
   flex-direction: column;
   align-items: center;
@@ -38,16 +38,16 @@
     }
   } */
 }
-.main-content .login-wrap a {
+.main-content .wrap a {
   color: #e9731a;
   -webkit-text-decoration: underline #e38c48;
-          text-decoration: underline #e38c48;
+  text-decoration: underline #e38c48;
 }
-.main-content .login-wrap form {
+.main-content .wrap form {
   text-align: center;
   width: 325px;
 }
-.main-content .login-wrap form button {
+.main-content .wrap form button {
   background-color: #4ea8c8;
   border: none;
   border-radius: 7px;
@@ -61,11 +61,11 @@
   transition: all 0.4s ease;
   margin-bottom: 10px;
 }
-.main-content .login-wrap form button:hover {
+.main-content .wrap form button:hover {
   background-color: #2596be;
   box-shadow: 0 5px 10px gainsboro;
 }
-.main-content .login-wrap form input {
+.main-content .wrap form input {
   border: 1px solid gainsboro;
   border-radius: 6px;
   width: 80%;
@@ -73,7 +73,7 @@
   display: block;
   margin: 16px auto;
 }
-.main-content .login-wrap .more-info {
+.main-content .wrap .more-info {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -124,7 +124,7 @@ body footer a {
 }
 body footer a:hover {
   -webkit-text-decoration: underline #333;
-          text-decoration: underline #333;
+  text-decoration: underline #333;
 }
 body footer ul {
   display: flex;
@@ -134,4 +134,4 @@ body footer ul {
 body footer ul li {
   list-style: none;
   color: #333;
-}/*# sourceMappingURL=Register.css.map */
+} /*# sourceMappingURL=Register.css.map */
