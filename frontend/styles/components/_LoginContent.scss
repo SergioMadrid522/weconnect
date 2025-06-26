@@ -24,7 +24,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 300px;
+    //height: 350px;
     border: 1px solid gainsboro;
     border-radius: 6px;
     box-shadow: 0 5px 10px gainsboro;
@@ -61,10 +61,7 @@
         width: 80%;
         padding: 10px;
         display: block;
-        margin: 0 auto;
-        &:last-of-type {
-          margin-top: 16px;
-        }
+        margin: 16px auto;
       }
     }
     .more-info {

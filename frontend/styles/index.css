@@ -23,7 +23,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 300px;
   border: 1px solid gainsboro;
   border-radius: 6px;
   box-shadow: 0 5px 10px gainsboro;
@@ -72,10 +71,7 @@
   width: 80%;
   padding: 10px;
   display: block;
-  margin: 0 auto;
-}
-.main-content .login-wrap form input:last-of-type {
-  margin-top: 16px;
+  margin: 16px auto;
 }
 .main-content .login-wrap .more-info {
   display: flex;
@@ -84,7 +80,58 @@
   flex-direction: column;
 }
 
-main {
+/* @use "./footer/ProjectList";
+@use "./footer/LanguageList";
+@use "./footer/ProjectList"; */
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 25px 13px;
+}
+.footer-content .projects,
+.footer-content .languages,
+.footer-content .credits {
+  padding: 13px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Monserrat", sans-serif;
+}
+
+body {
+  display: grid;
+  min-height: 100dvh;
+  grid-template-rows: 1fr auto;
+}
+body main {
   width: 100%;
   margin: auto;
-}/*# sourceMappingURL=Login.css.map */
+}
+body footer {
+  border-top: 1px solid gainsboro;
+  text-align: center;
+}
+body footer h3 {
+  margin-bottom: 15px;
+}
+body footer a {
+  color: #333;
+  text-decoration: none;
+}
+body footer a:hover {
+  -webkit-text-decoration: underline #333;
+          text-decoration: underline #333;
+}
+body footer ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+body footer ul li {
+  list-style: none;
+  color: #333;
+}/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,137 @@
+.main-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.main-content .logo {
+  max-width: 500px;
+}
+.main-content .logo h3 {
+  color: #2596be;
+}
+.main-content .logo img {
+  width: 100%;
+}
+.main-content .logo .catchphrase {
+  text-align: center;
+  font-size: 18px;
+}
+.main-content .login-wrap {
+  display: inherit;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid gainsboro;
+  border-radius: 6px;
+  box-shadow: 0 5px 10px gainsboro;
+  padding: 25px;
+  /* .line {
+    p::before {
+      content: "";
+      width: 100%;
+
+      position: absolute;
+      left: 0;
+      border: 4px solid gainsboro;
+    }
+  } */
+}
+.main-content .login-wrap a {
+  color: #e9731a;
+  -webkit-text-decoration: underline #e38c48;
+          text-decoration: underline #e38c48;
+}
+.main-content .login-wrap form {
+  text-align: center;
+  width: 325px;
+}
+.main-content .login-wrap form button {
+  background-color: #4ea8c8;
+  border: none;
+  border-radius: 7px;
+  color: #fcfcf7;
+  cursor: pointer;
+  width: 130px;
+  padding: 7px;
+  margin: 15px 0;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.4s ease;
+  margin-bottom: 10px;
+}
+.main-content .login-wrap form button:hover {
+  background-color: #2596be;
+  box-shadow: 0 5px 10px gainsboro;
+}
+.main-content .login-wrap form input {
+  border: 1px solid gainsboro;
+  border-radius: 6px;
+  width: 80%;
+  padding: 10px;
+  display: block;
+  margin: 16px auto;
+}
+.main-content .login-wrap .more-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-direction: column;
+}
+
+/* @use "./footer/ProjectList";
+@use "./footer/LanguageList";
+@use "./footer/ProjectList"; */
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 25px 13px;
+}
+.footer-content .projects,
+.footer-content .languages,
+.footer-content .credits {
+  padding: 13px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Monserrat", sans-serif;
+}
+
+body {
+  display: grid;
+  min-height: 100dvh;
+  grid-template-rows: 1fr auto;
+}
+body main {
+  width: 100%;
+  margin: auto;
+}
+body footer {
+  border-top: 1px solid gainsboro;
+  text-align: center;
+}
+body footer h3 {
+  margin-bottom: 15px;
+}
+body footer a {
+  color: #333;
+  text-decoration: none;
+}
+body footer a:hover {
+  -webkit-text-decoration: underline #333;
+          text-decoration: underline #333;
+}
+body footer ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+body footer ul li {
+  list-style: none;
+  color: #333;
+}/*# sourceMappingURL=Register.css.map */

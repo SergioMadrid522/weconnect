@@ -1,3 +1,4 @@
+/* Footer data */
 export const projects = [
   {
     link: "",
@@ -8,7 +9,7 @@ export const projects = [
     projectName: "E-Commerce",
   },
   {
-    link: "",
+    link: "https://fabian-gallery.netlify.app",
     projectName: "Fabian Gallery",
   },
 ];
@@ -27,6 +28,7 @@ export const languages = [
     language: "Français",
   },
 ];
+
 export const credits = [
   "Made with ❤️ by Fabian",
   "Powered by React & Figma",
