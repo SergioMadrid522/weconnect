@@ -16,8 +16,8 @@
           <img src="../../assets/logo.png" alt="weConnect Logo" />
         </div>
         <div class="user-info">
-          <div class="user-name">
-            <a href="#">Fabian</a>
+          <div class="user">
+            <a href="#" id="user-name">Fabian</a>
           </div>
           <button type="button">Log out</button>
         </div>
@@ -25,12 +25,9 @@
     </header>
     <main>
       <div class="container">
-        <div class="chat">
-          <div id="msg">hola como estas?</div>
-        </div>
+        <div class="chat"></div>
         <form id="chat-form">
-          <label for="message">Message:</label>
-          <input type="text" name="" id="message" />
+          <input type="text" name="" id="message-input" />
           <button type="submit" id="send-message">Send</button>
         </form>
       </div>
@@ -51,6 +48,7 @@
         </div>
       </div>
     </footer>
+    <script src="../js/chat.js"></script>
     <script type="module" src="../js/footerRender.js"></script>
   </body>
 </html>
