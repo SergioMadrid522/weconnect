@@ -13,6 +13,7 @@ router.post("/login", async (req, res) => {
         .status(400)
         .json({ message: "Email and password are required" });
     }
+
     const [rows] = await connection.query(
       `SELECT * FROM users WHERE EMAIL = ?`,
       [email]
@@ -24,9 +25,11 @@ router.post("/login", async (req, res) => {
 
     const user = rows[0];
     const passwordMatch = await bcrypt.compare(password, user.password);
+
     if (!passwordMatch) {
       return res.status(401).json({ message: "Incorrect Password" });
     }
+
     res.status(200).json({ message: "logged in" });
   } catch (error) {
     console.error(error);

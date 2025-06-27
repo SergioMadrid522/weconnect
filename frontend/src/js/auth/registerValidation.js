@@ -18,9 +18,6 @@ form.addEventListener("submit", async (e) => {
       return;
     }
     alert("You've just signed up, enjoy the chat!");
-    setTimeout(()=>{
-        window.location.href = "../../"
-    })
   } catch (error) {
     console.error("error: ", error);
   }

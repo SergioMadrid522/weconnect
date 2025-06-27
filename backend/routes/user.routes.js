@@ -11,9 +11,9 @@ router.get("/profile", async (req, res) => {
       "SELECT * FROM users WHERE id = ?",
       [id]
     );
-    
+
     if (usersRow.length === 0) {
-        return res.status(404).json({ message: "User not found" });
+      return res.status(404).json({ message: "User not found" });
     }
     const user = usersRow[0];
     res.status(200).json({ userinfo: user });
@@ -54,7 +54,7 @@ router.put("/changeUserName", async (req, res) => {
 router.put("/changeEmail", async (req, res) => {
   const { id, newEmail } = req.body;
   try {
-    //Verifies if the new email is taken or not
+    //Verify if the new email is taken or not
     const [existingUser] = await connection.query(
       "SELECT email FROM users WHERE email = ? AND id != ?",
       [newEmail, id]

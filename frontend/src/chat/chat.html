@@ -4,10 +4,53 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- CSS STYLES -->
-    <link rel="stylesheet" href="../../styles/index.css" />
+    <link rel="stylesheet" href="./Chat.css" />
     <!-- Icon -->
-    <link rel="icon" type="image/png" href="./assets/favicon.ico" />
+    <link rel="icon" type="image/png" href="../../assets/favicon.ico" />
     <title>WeConnect - Welcome to the chat</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="../../assets/logo.png" alt="weConnect Logo" />
+        </div>
+        <div class="user-info">
+          <div class="user-name">
+            <a href="#">Fabian</a>
+          </div>
+          <button type="button">Log out</button>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="container">
+        <div class="chat">
+          <div id="msg">hola como estas?</div>
+        </div>
+        <form id="chat-form">
+          <label for="message">Message:</label>
+          <input type="text" name="" id="message" />
+          <button type="submit" id="send-message">Send</button>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-content">
+        <div class="projects">
+          <h3>Projects</h3>
+          <ul id="projects-list"></ul>
+        </div>
+        <div class="languages">
+          <h3>Languages</h3>
+          <ul id="languages-list"></ul>
+        </div>
+        <div class="credits">
+          <h3>Credits</h3>
+          <ul id="credits"></ul>
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="../js/footerRender.js"></script>
+  </body>
 </html>

@@ -12,14 +12,15 @@ form.addEventListener("submit", async (e) => {
       },
       body: JSON.stringify({ email, password }),
     });
+
     if (!res.ok) {
       throw new Error("Error");
       return;
     }
-    alert("You've just signed up, enjoy the chat!");
+
     setTimeout(() => {
-      window.location.href = "../../";
-    });
+      window.location.href = "src/chat/chat.html";
+    }, 1500);
   } catch (error) {
     console.error("error: ", error);
   }

@@ -41,7 +41,7 @@
 .main-content .wrap a {
   color: #e9731a;
   -webkit-text-decoration: underline #e38c48;
-  text-decoration: underline #e38c48;
+          text-decoration: underline #e38c48;
 }
 .main-content .wrap form {
   text-align: center;
@@ -124,7 +124,7 @@ body footer a {
 }
 body footer a:hover {
   -webkit-text-decoration: underline #333;
-  text-decoration: underline #333;
+          text-decoration: underline #333;
 }
 body footer ul {
   display: flex;
@@ -134,4 +134,4 @@ body footer ul {
 body footer ul li {
   list-style: none;
   color: #333;
-} /*# sourceMappingURL=Register.css.map */
+}/*# sourceMappingURL=Register.css.map */

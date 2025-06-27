@@ -1,0 +1,12 @@
+main {
+  display: flex;
+  justify-content: center;
+  .container {
+    border: 1px solid gainsboro;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+  }
+}
