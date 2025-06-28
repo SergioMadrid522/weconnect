@@ -64,6 +64,28 @@ main .container .chat .msg {
   padding: 8px 10px;
   border-bottom: 1px solid gainsboro;
 }
+main .container #chat-form input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #333;
+}
+main .container #chat-form input:focus {
+  outline: none;
+}
+main .container #chat-form button {
+  background-color: #e9731a;
+  border: none;
+  border-radius: 7px;
+  color: #fcfcf7;
+  cursor: pointer;
+  width: 65px;
+  padding: 7px;
+  margin: 15px 0;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.4s ease;
+  margin-bottom: 10px;
+}
 
 /* @use "./footer/ProjectList";
 @use "./footer/LanguageList";
