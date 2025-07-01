@@ -4,6 +4,7 @@ form.addEventListener("submit", async (e) => {
   e.preventDefault();
   const email = document.getElementById("email-input").value.trim();
   const password = document.getElementById("password-input").value.trim();
+
   try {
     const res = await fetch("http://localhost:3000/auth/login", {
       method: "POST",
@@ -17,7 +18,8 @@ form.addEventListener("submit", async (e) => {
       throw new Error("Error");
       return;
     }
-
+    const data = await res.json();
+    localStorage.setItem("userName", data.user.name);
     setTimeout(() => {
       window.location.href = "src/chat/chat.html";
     }, 1500);
