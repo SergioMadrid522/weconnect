@@ -126,4 +126,22 @@ router.put("/changePassword", async (req, res) => {
   }
 });
 
+router.get("/username", async (req, res) => {
+  const { id } = req.body;
+  try {
+    const [rows] = await connection.query(
+      `SELECT username FROM users WHERE id = ?`,
+      [id]
+    );
+    if (rows.length === 0) {
+      return res.status(404).json({ message: "User no Found" });
+    }
+
+    const user = rows[0];
+    res.status(200).json({ username: user });
+  } catch (error) {
+    console.error("Error", error);
+    res.status(500).json({ message: "Server Error" });
+  }
+});
 export default router;

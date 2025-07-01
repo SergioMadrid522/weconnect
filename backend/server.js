@@ -4,6 +4,7 @@ import { port } from "./configuration.js";
 import authRoutes from "./routes/auth.routes.js";
 import userConfiguration from "./routes/user.routes.js";
 
+
 const corsOptions = {
   origin: "http://127.0.0.1:5500",
   optionsSuccessStatus: 200,
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use("/auth/", authRoutes);
 app.use("/userconfig/", userConfiguration);
 
+//chatServer();
 app.listen(port, () => {
   console.log(`Server running in http://localhost:${port}`);
 });
