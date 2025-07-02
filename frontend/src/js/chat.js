@@ -1,14 +1,18 @@
 const form = document.getElementById("chat-form");
-const socket = io("http://localhost:3001");
+const socket = io("http://192.168.0.12:3000");
 
 const storedName = localStorage.getItem("userName");
 
-socket.on("connect", () => {
+/* socket.on("connect", () => {
   displayMessage(`id: ${socket.id}`);
-});
+}); */
 
 socket.on("receive-message", (username, msg) => {
   displayMessage(username, msg);
+});
+
+socket.on("online-users", (username) => {
+  usersActive(username);
 });
 
 if (!storedName) {
@@ -18,8 +22,9 @@ if (!storedName) {
   if (userName) {
     userName.textContent = storedName;
   }
+  //socket.emit("online", username);
 }
-
+logout();
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -30,7 +35,7 @@ form.addEventListener("submit", (e) => {
     alert("Message input is empty");
     return;
   }
-  //displayMessage(msg);
+
   socket.emit("send-message", storedName, msg);
   msgInput.value = "";
 });
@@ -41,4 +46,26 @@ function displayMessage(username, msg) {
   message.classList.add("msg");
   message.textContent = `${username}: ${msg}`;
   chat.appendChild(message);
+
+  chat.scrollTop = chat.scrollHeight;
+}
+
+/* function usersActive(username) {
+  const users = document.getElementById("list");
+  users.innerHTML = "";
+
+  userArray.forEach((username) => {
+    const list = document.createElement("li");
+    list.textContent = username;
+    users.appendChild(list);
+  });
+} */
+
+function logout() {
+  const logout = document.getElementById("logout");
+
+  logout.addEventListener("click", () => {
+    localStorage.removeItem("userName");
+    window.location.href = "../../index.html";
+  });
 }

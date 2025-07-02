@@ -19,18 +19,31 @@
           <div class="user">
             <a href="#" id="user-name">Fabian</a>
           </div>
-          <button type="button">Log out</button>
+          <button type="button" id="logout">Log out</button>
         </div>
       </nav>
     </header>
     <main>
-      <div class="container">
+      <section class="wrap">
         <div class="chat"></div>
-        <form id="chat-form">
-          <input type="text" name="" id="message-input" />
-          <button type="submit" id="send-message">Send</button>
-        </form>
-      </div>
+        <div class="container">
+          <form id="chat-form" autocomplete="off">
+            <input
+              type="text"
+              name=""
+              id="message-input"
+              autocomplete="false"
+            />
+            <button type="submit" id="send-message">Send</button>
+          </form>
+        </div>
+      </section>
+      <section class="users-active">
+        <h2>Users Online</h2>
+        <div id="list">
+          <ul></ul>
+        </div>
+      </section>
     </main>
     <footer>
       <div class="footer-content">

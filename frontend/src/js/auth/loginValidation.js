@@ -6,7 +6,7 @@ form.addEventListener("submit", async (e) => {
   const password = document.getElementById("password-input").value.trim();
 
   try {
-    const res = await fetch("http://localhost:3000/auth/login", {
+    const res = await fetch("http://192.168.0.12:3000/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -15,14 +15,14 @@ form.addEventListener("submit", async (e) => {
     });
 
     if (!res.ok) {
-      throw new Error("Error");
-      return;
+      const errorData = await res.json();
+      throw new Error(errorData.message || "Error");
     }
+
     const data = await res.json();
     localStorage.setItem("userName", data.user.name);
-    setTimeout(() => {
-      window.location.href = "src/chat/chat.html";
-    }, 1500);
+
+    window.location.href = "src/chat/chat.html";
   } catch (error) {
     console.error("error: ", error);
   }

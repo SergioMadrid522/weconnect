@@ -1,14 +1,26 @@
+import http from "http";
 import express from "express";
 import cors from "cors";
 import { port } from "./configuration.js";
 import authRoutes from "./routes/auth.routes.js";
 import userConfiguration from "./routes/user.routes.js";
+import { chatServer } from "./chat.js";
 
+const allowedOrigins = ["http://192.168.0.12:5173", "http://localhost:5173"];
 
 const corsOptions = {
-  origin: "http://127.0.0.1:5500",
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  methods: "GET, POST, PATCH, DELETE, OPTIONS",
   optionsSuccessStatus: 200,
+  credentials: true,
 };
+
 const app = express();
 
 app.use(cors(corsOptions));
@@ -17,7 +29,9 @@ app.use(express.json());
 app.use("/auth/", authRoutes);
 app.use("/userconfig/", userConfiguration);
 
-//chatServer();
-app.listen(port, () => {
+const server = http.createServer(app);
+chatServer(server);
+
+server.listen(port, "0.0.0.0", () => {
   console.log(`Server running in http://localhost:${port}`);
 });

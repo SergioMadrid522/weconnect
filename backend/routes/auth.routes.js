@@ -15,7 +15,7 @@ router.post("/login", async (req, res) => {
     }
 
     const [rows] = await connection.query(
-      `SELECT * FROM users WHERE EMAIL = ?`,
+      `SELECT * FROM users WHERE email = ?`,
       [email]
     );
 
@@ -65,7 +65,7 @@ router.post("/register", async (req, res) => {
     if (usernamesRow.length > 0) {
       return res.status(400).json({ message: "Username is already taken" });
     }
-
+    const user = usernamesRow[0];
     //hash password
     const encryptedPassword = await hashPassword(password);
     //insert data into database
@@ -73,7 +73,12 @@ router.post("/register", async (req, res) => {
       "INSERT INTO users (username, email, password) VALUES (?, ?, ?)",
       [username, email, encryptedPassword]
     );
-    return res.status(201).json({ message: "Signed up" });
+    return res.status(200).json({
+      message: "Signed up",
+      user: {
+        name: user.username,
+      },
+    });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server Error" });

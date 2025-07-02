@@ -3,8 +3,7 @@ main {
   justify-content: center;
 
   .container {
-    border: 1px solid gainsboro;
-    border-radius: 6px;
+    border-top: 1px solid gainsboro;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -12,18 +11,15 @@ main {
     padding: 10px;
     width: 600px;
 
-    .chat {
-      width: 100%;
-      .msg {
-        padding: 8px 10px;
-        border-bottom: 1px solid gainsboro;
-      }
-    }
     #chat-form {
+      width: 100%;
       input {
         background-color: transparent;
-        border: none;
-        border-bottom: 1px solid #333;
+        border: 1px solid rgb(157, 157, 157);
+        border-radius: 6px;
+        padding: 10px;
+        font-size: 0.98em;
+        width: 90%;
         &:focus {
           outline: none;
         }
@@ -35,12 +31,12 @@ main {
         color: #fcfcf7;
         cursor: pointer;
         width: 65px;
-        padding: 7px;
-        margin: 15px 0;
+        padding: 10px 6px;
+        margin: 15px 10px;
         font-weight: 600;
         font-size: 16px;
+        width: 8%;
         transition: all 0.4s ease;
-        margin-bottom: 10px;
       }
     }
   }
