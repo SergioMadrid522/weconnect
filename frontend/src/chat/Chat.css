@@ -228,7 +228,7 @@ body {
 body main {
   display: grid;
   grid-template-areas: "chat active-users";
-  grid-template-columns: 7fr 1.5fr;
+  grid-template-columns: 1fr 0;
 }
 body main .wrap {
   grid-area: chat;
@@ -250,6 +250,7 @@ body main .wrap .container {
   width: 100%;
 }
 body main .users-active {
+  display: none;
   grid-area: active-users;
   border-left: 1px solid gainsboro;
   text-align: center;

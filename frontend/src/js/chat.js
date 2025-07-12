@@ -1,4 +1,5 @@
 import { displayMessage, logout, userStatus } from "./utils/chatUtils.js";
+import { errorAlert } from "./sweet-alert/alerts.js";
 
 const form = document.getElementById("chat-form");
 const socket = io("http://192.168.0.2:3000");
@@ -36,7 +37,7 @@ form.addEventListener("submit", (e) => {
   const msg = msgInput.value;
 
   if (msg === "") {
-    alert("Message input is empty");
+    errorAlert("Message input is empty");
     return;
   }
 
