@@ -27,6 +27,7 @@
   border-radius: 6px;
   box-shadow: 0 5px 10px gainsboro;
   padding: 25px;
+  min-width: 25%;
   /* .line {
     p::before {
       content: "";
@@ -113,6 +114,7 @@
   .main-content .wrap .more-info {
     font-size: 15px;
   }
+  /* CHAT QUERIES */
   header nav {
     padding: 5px 0;
   }
@@ -161,15 +163,16 @@
   }
   .main-content .wrap {
     width: 80%;
+    min-width: 20%;
     height: 300px !important;
     padding: 0;
   }
   .main-content .wrap form input {
-    font-size: 18px;
+    font-size: 16px;
     width: 90%;
   }
   .main-content .wrap .more-info {
-    font-size: 17.5px;
+    font-size: 16px;
   }
   /* CHAT QUERIES */
   header nav {

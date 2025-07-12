@@ -22,6 +22,7 @@
       }
     }
   }
+  /* CHAT QUERIES */
   header {
     nav {
       padding: 5px 0;
@@ -75,16 +76,17 @@
     }
     .wrap {
       width: 80%;
+      min-width: 20%;
       height: 300px !important;
       padding: 0;
       form {
         input {
-          font-size: 18px;
+          font-size: 16px;
           width: 90%;
         }
       }
       .more-info {
-        font-size: 17.5px;
+        font-size: 16px;
       }
     }
   }

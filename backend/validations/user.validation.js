@@ -9,9 +9,9 @@ export function userSignUpValidation(data) {
   }
   if (isEmpty(data.email)) {
     errors.push("Email cannot be empty");
-  } /* else if (!regexEmail.test(data.email)) {
+  } else if (!regexEmail.test(data.email)) {
     errors.push("This email is not a real one");
-  } */
+  }
 
   if (isEmpty(data.password)) {
     errors.push("You have to set a password");

@@ -1,4 +1,5 @@
 import { successAlert, errorAlert } from "../sweet-alert/alerts.js";
+
 const form = document.getElementById("form");
 
 form.addEventListener("submit", async (e) => {
@@ -23,16 +24,21 @@ form.addEventListener("submit", async (e) => {
       },
       body: JSON.stringify({ email, password }),
     });
+
     const data = await res.json();
+
     if (!res.ok) {
       let errors = data.errors;
 
       if (Array.isArray(errors)) {
         errors = errors.join(", ");
       }
+
       errorAlert(errors || "Unknown error");
+
       emailInput.style.border = "1px solid red";
       passwordInput.style.border = "1px solid red";
+
       return;
     }
 

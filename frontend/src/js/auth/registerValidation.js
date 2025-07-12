@@ -1,19 +1,25 @@
 import { successAlert, errorAlert } from "../sweet-alert/alerts.js";
-//import { userSignUpValidation } from "../../../../backend/validations/user.validation.js";
 
 const form = document.getElementById("form");
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const username = document.getElementById("username-input").value.trim();
-  const email = document.getElementById("email-input").value.trim();
-  const password = document.getElementById("password-input").value.trim();
 
-  //const errors = userSignUpValidation(req.body);
+  const usernameInput = document.getElementById("username-input");
+  const emailInput = document.getElementById("email-input");
+  const passwordInput = document.getElementById("password-input");
+  const username = usernameInput.value.trim();
+  const email = emailInput.value.trim();
+  const password = passwordInput.value.trim();
 
-  /* if (errors.length > 0) {
-    return res.status(400).json({ errors });
-  } */
+  if (!username || !email || !password) {
+    errorAlert("Por favor llena todos los campos.");
+    if (!username) usernameInput.style.border = "1px solid red";
+    if (!email) emailInput.style.border = "1px solid red";
+    if (!password) passwordInput.style.border = "1px solid red";
+    return;
+  }
+
   try {
     const res = await fetch("http://192.168.0.2:3000/auth/register", {
       method: "POST",
@@ -24,21 +30,47 @@ form.addEventListener("submit", async (e) => {
       body: JSON.stringify({ username, email, password }),
     });
 
-    if (!res.ok) {
-      const errorData = await res.json();
-      const error = errorData.message;
+    const data = await res.json();
 
-      errorAlert(error || "Unknown Error");
+    if (!res.ok) {
+      let errors = data.errors;
+
+      if (Array.isArray(errors)) {
+        errors = errors.join(", ");
+      }
+
+      errorAlert(errors || "Unknown Error");
+      usernameInput.style.border = "1px solid red";
+      emailInput.style.border = "1px solid red";
+      passwordInput.style.border = "1px solid red";
       return;
     }
 
-    const data = await res.json();
     const userName = data.user.name;
 
     localStorage.setItem("userName", userName);
     const link = "../chat/chat.html";
+
     successAlert("sign up", userName, link);
   } catch (error) {
     console.error("error: ", error);
   }
 });
+
+detectLetter();
+
+function detectLetter() {
+  const usernameInput = document.getElementById("username-input");
+  const emailInput = document.getElementById("email-input");
+  const passwordInput = document.getElementById("password-input");
+
+  usernameInput.addEventListener("input", () => {
+    usernameInput.style.border = "1px solid gainsboro";
+  });
+  emailInput.addEventListener("input", () => {
+    emailInput.style.border = "1px solid gainsboro";
+  });
+  passwordInput.addEventListener("input", () => {
+    passwordInput.style.border = "1px solid gainsboro";
+  });
+}
