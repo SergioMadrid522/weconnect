@@ -1,0 +1,139 @@
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  /* LOGIN QUERIES */
+  .main-content {
+    width: 100%;
+    margin: auto;
+    padding: 30px 0;
+    .logo {
+      width: 300px;
+    }
+    .wrap {
+      width: 45%;
+      height: 300px !important;
+      padding: 0;
+      form {
+        input {
+          font-size: 15px;
+          width: 90%;
+        }
+      }
+      .more-info {
+        font-size: 15px;
+      }
+    }
+  }
+  header {
+    nav {
+      padding: 5px 0;
+      .logo {
+        width: 130px;
+      }
+    }
+  }
+  main {
+    .wrap {
+      width: 100%;
+      height: 90dvh !important;
+    }
+    grid-template-columns: 7fr 1.5fr !important;
+    .container {
+      form {
+        padding: 15px 6px !important;
+        button {
+          display: block !important;
+          align-items: center;
+          justify-content: center;
+          background-color: #f98f3e;
+          border: none;
+          border-radius: 7px;
+          color: #fcfcf7;
+          cursor: pointer;
+          width: 50px;
+          padding: 4px;
+          margin: 15px 10px;
+          transition: all 0.3s ease;
+          svg {
+            fill: #fcfcf7;
+            color: #333333c6;
+          }
+        }
+      }
+    }
+    .users-active {
+      h2 {
+        padding: 10px 0 !important;
+      }
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  /* LOGIN QUERIES */
+  .main-content {
+    padding: 30px 0;
+    .logo {
+      width: 300px;
+    }
+    .wrap {
+      width: 80%;
+      height: 300px !important;
+      padding: 0;
+      form {
+        input {
+          font-size: 18px;
+          width: 90%;
+        }
+      }
+      .more-info {
+        font-size: 17.5px;
+      }
+    }
+  }
+
+  /* CHAT QUERIES */
+  header {
+    nav {
+      padding: 5px 0;
+      .logo {
+        width: 130px;
+      }
+    }
+  }
+  main {
+    display: block !important;
+    .wrap {
+      width: 100%;
+      height: 90dvh !important;
+      .chat {
+        .msg {
+          font-size: 20px !important;
+        }
+      }
+    }
+    .container {
+      form {
+        padding: 5px 6px !important;
+        button {
+          display: flex !important;
+          align-items: center;
+          justify-content: center;
+          background-color: #f98f3e;
+          border: none;
+          border-radius: 7px;
+          color: #fcfcf7;
+          cursor: pointer;
+          width: 50px;
+          padding: 4px;
+          margin: 15px 10px;
+          transition: all 0.3s ease;
+          svg {
+            fill: #fcfcf7;
+            color: #333333c6;
+          }
+        }
+      }
+    }
+    .users-active {
+      display: none;
+    }
+  }
+}

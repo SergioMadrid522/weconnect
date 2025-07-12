@@ -1,6 +1,8 @@
 /* @use "./footer/ProjectList";
 @use "./footer/LanguageList";
 @use "./footer/ProjectList"; */
+@use "./footer/MediaQueries";
+
 .footer-content {
   display: flex;
   justify-content: space-around;
