@@ -6,7 +6,7 @@ import authRoutes from "./routes/auth.routes.js";
 import userConfiguration from "./routes/user.routes.js";
 import { chatServer } from "./chat.js";
 
-const allowedOrigins = ["http://192.168.0.12:5173", "http://localhost:5173"];
+const allowedOrigins = ["http://192.168.0.2:5173", "http://localhost:5173"];
 
 const corsOptions = {
   origin: function (origin, callback) {

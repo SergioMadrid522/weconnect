@@ -4,7 +4,7 @@ nav {
   align-items: center;
   border-bottom: 1px solid gainsboro;
   flex-wrap: wrap;
-  padding: 15px;
+  padding: 15px 0;
 }
 nav .logo {
   width: 180px;
@@ -49,14 +49,14 @@ main {
 }
 main .container {
   border-top: 1px solid gainsboro;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 15px;
-  padding: 10px;
   width: 600px;
 }
 main .container #chat-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: 20px 6px;
   width: 100%;
 }
 main .container #chat-form input {
@@ -65,29 +65,140 @@ main .container #chat-form input {
   border-radius: 6px;
   padding: 10px;
   font-size: 0.98em;
-  width: 90%;
+  width: 95%;
 }
 main .container #chat-form input:focus {
   outline: none;
 }
 main .container #chat-form button {
-  background-color: #e9731a;
-  border: none;
-  border-radius: 7px;
-  color: #fcfcf7;
-  cursor: pointer;
-  width: 65px;
-  padding: 10px 6px;
-  margin: 15px 10px;
-  font-weight: 600;
-  font-size: 16px;
-  width: 8%;
-  transition: all 0.4s ease;
+  display: none;
 }
 
 /* @use "./footer/ProjectList";
 @use "./footer/LanguageList";
 @use "./footer/ProjectList"; */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  /* LOGIN QUERIES */
+  .main-content {
+    width: 100%;
+    margin: auto;
+    padding: 30px 0;
+  }
+  .main-content .logo {
+    width: 300px;
+  }
+  .main-content .wrap {
+    width: 45%;
+    height: 300px !important;
+    padding: 0;
+  }
+  .main-content .wrap form input {
+    font-size: 18px;
+    width: 90%;
+  }
+  .main-content .wrap .more-info {
+    font-size: 17.5px;
+  }
+  header nav {
+    padding: 5px 0;
+  }
+  header nav .logo {
+    width: 130px;
+  }
+  main {
+    grid-template-columns: 7fr 1.5fr !important;
+  }
+  main .wrap {
+    width: 100%;
+    height: 90dvh !important;
+  }
+  main .container form {
+    padding: 15px 6px !important;
+  }
+  main .container form button {
+    display: block !important;
+    align-items: center;
+    justify-content: center;
+    background-color: #f98f3e;
+    border: none;
+    border-radius: 7px;
+    color: #fcfcf7;
+    cursor: pointer;
+    width: 50px;
+    padding: 4px;
+    margin: 15px 10px;
+    transition: all 0.3s ease;
+  }
+  main .container form button svg {
+    fill: #fcfcf7;
+    color: rgba(51, 51, 51, 0.7764705882);
+  }
+  main .users-active h2 {
+    padding: 10px 0 !important;
+  }
+}
+@media screen and (max-width: 767px) {
+  /* LOGIN QUERIES */
+  .main-content {
+    padding: 30px 0;
+  }
+  .main-content .logo {
+    width: 300px;
+  }
+  .main-content .wrap {
+    width: 80%;
+    height: 300px !important;
+    padding: 0;
+  }
+  .main-content .wrap form input {
+    font-size: 18px;
+    width: 90%;
+  }
+  .main-content .wrap .more-info {
+    font-size: 17.5px;
+  }
+  /* CHAT QUERIES */
+  header nav {
+    padding: 5px 0;
+  }
+  header nav .logo {
+    width: 130px;
+  }
+  main {
+    display: block !important;
+  }
+  main .wrap {
+    width: 100%;
+    height: 90dvh !important;
+  }
+  main .wrap .chat .msg {
+    font-size: 20px !important;
+  }
+  main .container form {
+    padding: 5px 6px !important;
+  }
+  main .container form button {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background-color: #f98f3e;
+    border: none;
+    border-radius: 7px;
+    color: #fcfcf7;
+    cursor: pointer;
+    width: 50px;
+    padding: 4px;
+    margin: 15px 10px;
+    transition: all 0.3s ease;
+  }
+  main .container form button svg {
+    fill: #fcfcf7;
+    color: rgba(51, 51, 51, 0.7764705882);
+  }
+  main .users-active {
+    display: none;
+  }
+}
 .footer-content {
   display: flex;
   justify-content: space-around;
@@ -109,8 +220,8 @@ main .container #chat-form button {
 
 body {
   display: grid;
-  min-height: 10dvh;
-  grid-template-rows: auto 1fr auto;
+  min-height: 100dvh;
+  grid-template-rows: auto 1fr;
 }
 body main {
   display: grid;
@@ -121,7 +232,7 @@ body main .wrap {
   grid-area: chat;
   display: flex;
   flex-direction: column;
-  height: 67dvh;
+  height: 85dvh;
 }
 body main .wrap .chat {
   height: 100%;

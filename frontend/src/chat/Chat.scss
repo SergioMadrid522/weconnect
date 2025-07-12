@@ -10,19 +10,19 @@
 }
 body {
   display: grid;
-  min-height: 10dvh;
-  grid-template-rows: auto 1fr auto;
+  min-height: 100dvh;
+  grid-template-rows: auto 1fr;
 
   main {
     display: grid;
     grid-template-areas: "chat active-users";
     grid-template-columns: 7fr 1.5fr;
-    //height: 100dvh;
+    //    height: 100dvh;
     .wrap {
       grid-area: chat;
       display: flex;
       flex-direction: column;
-      height: 67dvh;
+      height: 85dvh;
       .chat {
         height: 100%;
         overflow-y: auto;
