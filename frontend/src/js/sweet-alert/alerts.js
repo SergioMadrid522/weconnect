@@ -1,3 +1,12 @@
+import io from "socket.io-client";
+import { userStatus } from "../utils/userStatus.js";
+
+const socket = io("http://192.168.0.2:3000");
+const storedName = localStorage.getItem("userName");
+socket.on("logout-users", (storedName) => {
+  userStatus(storedName, "is not longer with us");
+});
+
 // Success login and sign up alert
 export function successAlert(type, user, link) {
   Swal.fire({
@@ -12,6 +21,7 @@ export function successAlert(type, user, link) {
 }
 
 // Log out Alert
+
 export function logoutAlert() {
   Swal.fire({
     title: "You're about to log out!",
@@ -23,7 +33,11 @@ export function logoutAlert() {
     confirmButtonText: "Yes, log me out",
   }).then((result) => {
     if (result.isConfirmed) {
+      console.log(storedName);
+      socket.emit("offline", storedName);
+
       localStorage.removeItem("userName");
+
       Swal.fire({
         text: "Loging out, wait a second",
         showConfirmButton: false,

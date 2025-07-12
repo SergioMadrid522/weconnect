@@ -19,9 +19,11 @@ export function chatServer(server) {
       console.log(username, msg);
     });
 
-    /*  socket.on("online", (username) => {
-      onlineUsers.add(username);
-      io.emit("online-users", Array.from(onlineUsers));
-    }); */
+    socket.on("online", (username) => {
+      socket.broadcast.emit("online-users", username);
+    });
+    socket.on("offline", (username) => {
+      socket.broadcast.emit("logout-users", username);
+    });
   });
 }
