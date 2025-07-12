@@ -1,5 +1,7 @@
+import { logoutAlert } from "./sweet-alert/alerts.js";
+
 const form = document.getElementById("chat-form");
-const socket = io("http://192.168.0.12:3000");
+const socket = io("http://192.168.0.2:3000");
 
 const storedName = localStorage.getItem("userName");
 
@@ -24,7 +26,9 @@ if (!storedName) {
   }
   //socket.emit("online", username);
 }
+
 logout();
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -65,7 +69,7 @@ function logout() {
   const logout = document.getElementById("logout");
 
   logout.addEventListener("click", () => {
-    localStorage.removeItem("userName");
-    window.location.href = "../../index.html";
+    //localStorage.removeItem("userName");
+    logoutAlert();
   });
 }

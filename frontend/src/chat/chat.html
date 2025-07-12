@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="./Chat.css" />
     <!-- Icon -->
     <link rel="icon" type="image/png" href="../../assets/favicon.ico" />
+    <!-- SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>WeConnect - Welcome to the chat</title>
   </head>
   <body>
@@ -17,7 +19,7 @@
         </div>
         <div class="user-info">
           <div class="user">
-            <a href="#" id="user-name">Fabian</a>
+            <a href="#" id="user-name"></a>
           </div>
           <button type="button" id="logout">Log out</button>
         </div>
@@ -45,24 +47,7 @@
         </div>
       </section>
     </main>
-    <footer>
-      <div class="footer-content">
-        <div class="projects">
-          <h3>Projects</h3>
-          <ul id="projects-list"></ul>
-        </div>
-        <div class="languages">
-          <h3>Languages</h3>
-          <ul id="languages-list"></ul>
-        </div>
-        <div class="credits">
-          <h3>Credits</h3>
-          <ul id="credits"></ul>
-        </div>
-      </div>
-    </footer>
     <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
-    <script src="../js/chat.js"></script>
-    <script type="module" src="../js/footerRender.js"></script>
+    <script type="module" src="../js/chat.js"></script>
   </body>
 </html>

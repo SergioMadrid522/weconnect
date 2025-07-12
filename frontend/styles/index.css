@@ -73,11 +73,19 @@
   display: block;
   margin: 16px auto;
 }
+.main-content .wrap form input:focus {
+  outline: none;
+}
 .main-content .wrap .more-info {
   display: flex;
   align-items: center;
   gap: 20px;
   flex-direction: column;
+}
+
+#email-input,
+#password-input {
+  transition: border 0.3s;
 }
 
 /* @use "./footer/ProjectList";
