@@ -1,19 +1,21 @@
 import express from "express";
 import bcrypt from "bcryptjs";
+
 import { connection } from "../db.js";
 import { hashPassword } from "../hashPassword.js";
+import { userLoginValidation } from "../validations/user.validation.js";
 
 const router = express.Router();
 
 router.post("/login", async (req, res) => {
+  const errors = userLoginValidation(req.body);
   const { email, password } = req.body;
-  try {
-    if (!email || !password) {
-      return res
-        .status(400)
-        .json({ message: "Email and password are required" });
-    }
 
+  if (errors.length > 0) {
+    return res.status(400).json({ errors });
+  }
+
+  try {
     const [rows] = await connection.query(
       `SELECT * FROM users WHERE email = ?`,
       [email]
@@ -30,7 +32,7 @@ router.post("/login", async (req, res) => {
       return res.status(401).json({ message: "Incorrect Password" });
     }
 
-    res.status(200).json({
+    res.status(201).json({
       message: "logged in",
       user: {
         name: user.username,
@@ -48,7 +50,7 @@ router.post("/register", async (req, res) => {
     if (!username || !email || !password) {
       return res
         .status(400)
-        .json({ message: "Email and password are required" });
+        .json({ message: "Username, Email and password are required" });
     }
     const [emailsRow] = await connection.query(
       "SELECT * FROM users WHERE email = ?",
@@ -65,7 +67,6 @@ router.post("/register", async (req, res) => {
     if (usernamesRow.length > 0) {
       return res.status(400).json({ message: "Username is already taken" });
     }
-    const user = usernamesRow[0];
     //hash password
     const encryptedPassword = await hashPassword(password);
     //insert data into database
@@ -76,7 +77,7 @@ router.post("/register", async (req, res) => {
     return res.status(200).json({
       message: "Signed up",
       user: {
-        name: user.username,
+        name: username,
       },
     });
   } catch (error) {
