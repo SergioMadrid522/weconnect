@@ -3,7 +3,7 @@ import { Server } from "socket.io";
 export function chatServer(server) {
   const io = new Server(server, {
     cors: {
-      origin: ["https://weconnect-4on0.onrender.com", "http://localhost:5173"],
+      origin: ["https://weconnectchat.netlify.app", "http://localhost:5173"],
       methods: ["GET", "POST"],
       credentials: true,
     },

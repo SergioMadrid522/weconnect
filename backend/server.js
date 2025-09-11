@@ -7,7 +7,7 @@ import { chatServer } from "./chat.js";
 import authRoutes from "./routes/auth.routes.js";
 import userConfiguration from "./routes/user.routes.js";
 
-const allowedOrigins = ["https://weconnectchat.netlify.app/", "http://localhost:5173"];
+const allowedOrigins = ["https://weconnectchat.netlify.app", "http://localhost:5173"];
 
 const corsOptions = {
   origin: function (origin, callback) {
