@@ -1,11 +1,11 @@
-import io from "socket.io-client";
+import { io } from "socket.io-client";
 import { userStatus } from "../utils/userStatus.js";
 
 const socket = io("https://weconnect-4on0.onrender.com");
 const storedName = localStorage.getItem("userName");
 socket.on("logout-users", (storedName) => {
   userStatus(storedName, "is not longer with us");
-});
+}); 
 
 // Success login and sign up alert
 export function successAlert(type, user, link) {
