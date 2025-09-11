@@ -21,7 +21,7 @@ form.addEventListener("submit", async (e) => {
   }
 
   try {
-    const res = await fetch("http://192.168.0.5:3000/auth/register", {
+    const res = await fetch("https://weconnect-4on0.onrender.com", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
