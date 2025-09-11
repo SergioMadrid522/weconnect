@@ -45,6 +45,7 @@ WeConnect is a real-time chat application featuring user registration and login,
      npm run dev
 8. Open your browser and visit:
      http://localhost:5173
+
 ## Usage
 
 Register a new account or log in with existing credentials.
@@ -68,6 +69,6 @@ MIT License.
 ## Contact
 
 Sergio Madrid
-Email: sergiomadrid522@example.com
+Email: sergiofabian.madrid@hotmail.com
 LinkedIn: https://www.linkedin.com/in/sergio-acu%C3%B1a-59735336b/
 
