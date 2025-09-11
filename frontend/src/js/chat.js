@@ -2,7 +2,7 @@ import { displayMessage, logout, userStatus } from "./utils/chatUtils.js";
 import { errorAlert } from "./sweet-alert/alerts.js";
 
 const form = document.getElementById("chat-form");
-const socket = io("http://192.168.0.2:3000");
+const socket = io("http://192.168.0.5:3000");
 
 const storedName = localStorage.getItem("userName");
 

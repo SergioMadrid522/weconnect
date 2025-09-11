@@ -21,7 +21,7 @@ form.addEventListener("submit", async (e) => {
   }
 
   try {
-    const res = await fetch("http://192.168.0.2:3000/auth/register", {
+    const res = await fetch("http://192.168.0.5:3000/auth/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -40,9 +40,11 @@ form.addEventListener("submit", async (e) => {
       }
 
       errorAlert(errors || "Unknown Error");
+
       usernameInput.style.border = "1px solid red";
       emailInput.style.border = "1px solid red";
       passwordInput.style.border = "1px solid red";
+
       return;
     }
 

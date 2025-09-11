@@ -94,6 +94,9 @@
 @use "./footer/ProjectList"; */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   /* LOGIN QUERIES */
+  main {
+    display: flex !important;
+  }
   .main-content {
     width: 100%;
     margin: auto;
@@ -155,6 +158,9 @@
 }
 @media screen and (max-width: 767px) {
   /* LOGIN QUERIES */
+  main {
+    display: flex !important;
+  }
   .main-content {
     padding: 30px 0;
   }

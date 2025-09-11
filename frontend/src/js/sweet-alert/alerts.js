@@ -1,7 +1,7 @@
 import io from "socket.io-client";
 import { userStatus } from "../utils/userStatus.js";
 
-const socket = io("http://192.168.0.2:3000");
+const socket = io("http://192.168.0.5:3000");
 const storedName = localStorage.getItem("userName");
 socket.on("logout-users", (storedName) => {
   userStatus(storedName, "is not longer with us");

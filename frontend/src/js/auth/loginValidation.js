@@ -17,7 +17,7 @@ form.addEventListener("submit", async (e) => {
   }
 
   try {
-    const res = await fetch("http://192.168.0.2:3000/auth/login", {
+    const res = await fetch("http://192.168.0.5:3000/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -7,7 +7,7 @@ import { chatServer } from "./chat.js";
 import authRoutes from "./routes/auth.routes.js";
 import userConfiguration from "./routes/user.routes.js";
 
-const allowedOrigins = ["http://192.168.0.2:5173", "http://localhost:5173"];
+const allowedOrigins = ["http://192.168.0.5:5173", "http://localhost:5173"];
 
 const corsOptions = {
   origin: function (origin, callback) {
@@ -32,7 +32,6 @@ app.use("/userconfig/", userConfiguration);
 
 const server = http.createServer(app);
 chatServer(server);
-
 server.listen(port, "0.0.0.0", () => {
-  console.log(`Server running in http://localhost:${port}`);
+  console.log(`Server running`);
 });
