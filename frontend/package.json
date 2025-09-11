@@ -5,6 +5,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "sweetalert2": "^11.22.1"
+    "sweetalert2": "^11.22.1",
+    "vite": "^7.0.4"
   }
 }
