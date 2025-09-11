@@ -1,7 +1,7 @@
 import http from "http";
 import express from "express";
 import cors from "cors";
-import { port } from "./configuration.js";
+import { PORT } from "./configuration.js";
 import { chatServer } from "./chat.js";
 
 import authRoutes from "./routes/auth.routes.js";
@@ -32,6 +32,12 @@ app.use("/userconfig/", userConfiguration);
 
 const server = http.createServer(app);
 chatServer(server);
+<<<<<<< HEAD
 server.listen(port, "0.0.0.0", () => {
   console.log(`Server running`);
+=======
+
+server.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running in http://localhost:${PORT}`);
+>>>>>>> d60255bcac45593281b14b664389c9ead89894c2
 });
