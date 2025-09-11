@@ -1,5 +1,5 @@
 {
-  "name": "backend",
+  "name": "weconnect-backend",
   "version": "1.0.0",
   "description": "",
   "license": "ISC",
@@ -11,6 +11,7 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "express": "^5.1.0",
     "http": "^0.0.1-security",
     "nodemon": "^3.1.10",
     "socket.io": "^4.8.1"
