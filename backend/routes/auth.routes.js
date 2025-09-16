@@ -5,7 +5,7 @@ import {
   userLoginValidation,
   userSignUpValidation,
 } from "../validations/user.validation.js";
-import { connection } from "../db.js";
+import { pool } from "../db.js";
 import { hashPassword } from "../hashPassword.js";
 
 const router = express.Router();
@@ -19,16 +19,16 @@ router.post("/login", async (req, res) => {
   }
 
   try {
-    const [rows] = await connection.query(
-      `SELECT * FROM users WHERE email = ?`,
+    const findEmail = await pool.query(
+      `SELECT * FROM users WHERE email = $1`,
       [email]
     );
 
-    if (rows.length === 0) {
+    if (findEmail.rows.length === 0) {
       return res.status(404).json({ message: "Email not registered" });
     }
 
-    const user = rows[0];
+    const user = findEmail.rows[0];
     const passwordMatch = await bcrypt.compare(password, user.password);
 
     if (!passwordMatch) {
@@ -48,36 +48,37 @@ router.post("/login", async (req, res) => {
 });
 
 router.post("/register", async (req, res) => {
-  const errors = userLoginValidation(req.body);
+  const errors = userSignUpValidation(req.body);
   const { username, email, password } = req.body;
 
   if (errors.length > 0) {
     return res.status(400).json({ errors });
   }
+
   try {
-    const [emailsRow] = await connection.query(
-      "SELECT * FROM users WHERE email = ?",
+    const emails = await pool.query(
+      "SELECT * FROM users WHERE email = $1",
       [email]
     );
 
-    if (emailsRow.length > 0) {
+    if (emails.rows.length > 0) {
       return res.status(400).json({ message: "Email is already registered" });
     }
 
-    const [usernamesRow] = await connection.query(
-      "SELECT * FROM users WHERE username = ?",
+    const userNames = await pool.query(
+      "SELECT * FROM users WHERE username = $1",
       [username]
     );
 
-    if (usernamesRow.length > 0) {
+    if (userNames.rows.length > 0) {
       return res.status(400).json({ message: "Username is already taken" });
     }
 
     //hash password
     const encryptedPassword = await hashPassword(password);
     //insert data into database
-    await connection.query(
-      "INSERT INTO users (username, email, password) VALUES (?, ?, ?)",
+    await pool.query(
+      "INSERT INTO users (username, email, password) VALUES ($1, $2, $3)",
       [username, email, encryptedPassword]
     );
 

@@ -1,4 +1,6 @@
-import mysql2 from "mysql2/promise";
+import pkg from 'pg';
+const { Pool } = pkg;
+
 import {
   DB_HOST,
   DB_USER,
@@ -6,10 +8,14 @@ import {
   DB_NAME,
   DB_PORT,
 } from "./configuration.js";
-export const connection = mysql2.createPool({
+
+export const pool = new Pool({
   user: DB_USER,
   password: DB_PASSWORD,
   host: DB_HOST,
   port: DB_PORT,
   database: DB_NAME,
+  ssl: {
+    rejectUnauthorized: false
+  }
 });
