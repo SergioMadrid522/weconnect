@@ -45,7 +45,7 @@ form.addEventListener("submit", async (e) => {
     const userName = data.user.name;
 
     localStorage.setItem("userName", userName);
-    const link = "/src/chat/chat.html";
+    const link = "/frontend/chat.html";
 
     successAlert("login", userName, link);
   } catch (error) {

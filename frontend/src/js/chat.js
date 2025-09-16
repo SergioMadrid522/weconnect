@@ -19,7 +19,7 @@ socket.on("online-users", (username) => {
 });
 
 if (!storedName) {
-  window.location.href = "../../index.html";
+  window.location.href = "/frontend/index.html";
 } else {
   const userName = document.getElementById("user-name");
   if (userName) {
