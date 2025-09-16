@@ -33,7 +33,6 @@ export function logoutAlert() {
     confirmButtonText: "Yes, log me out",
   }).then((result) => {
     if (result.isConfirmed) {
-      console.log(storedName);
       socket.emit("offline", storedName);
 
       localStorage.removeItem("userName");

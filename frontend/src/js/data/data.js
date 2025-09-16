@@ -1,7 +1,7 @@
 /* Footer data */
 export const projects = [
   {
-    link: "",
+    link: "https://fabianmadrid.dev",
     projectName: "Personal portfolio",
   },
   {
@@ -21,16 +21,12 @@ export const languages = [
   },
   {
     data: "",
-    language: "Spanish",
+    language: "More languages will be available soon",
   },
-  {
-    data: "",
-    language: "Français",
-  },
+  
 ];
 
 export const credits = [
   "Made with ❤️ by Fabian",
-  "Powered by React & Figma",
   "Portfolio Project - 2025",
 ];

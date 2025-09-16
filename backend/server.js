@@ -33,5 +33,5 @@ app.use("/userconfig/", userConfiguration);
 const server = http.createServer(app);
 chatServer(server);
 server.listen(PORT, "0.0.0.0", () => {
-  console.log(`Server running`);
+  //console.log(`Server running`);
 });
