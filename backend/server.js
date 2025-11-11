@@ -1,14 +1,14 @@
 import http from "http";
 import express from "express";
 import cors from "cors";
-import { PORT } from "./configuration.js";
+import dotenv from "dotenv/config";
 import { chatServer } from "./chat.js";
 
 import authRoutes from "./routes/auth.routes.js";
 import userConfiguration from "./routes/user.routes.js";
 
 const allowedOrigins = [
-  "https://weconnectchat.netlify.app", 
+  "https://weconnectchat.netlify.app",
   "http://localhost:5173",
   "htpp://localhost:4000",
 ];
@@ -36,6 +36,8 @@ app.use("/userconfig/", userConfiguration);
 
 const server = http.createServer(app);
 chatServer(server);
+
+const PORT = process.env.PORT || 4000;
 server.listen(PORT, "0.0.0.0", () => {
   //console.log(`Server running`);
 });
