@@ -1,9 +1,12 @@
 import pkg from "pg";
+import dotenv from "dotenv";
+
+dotenv.config();
+
 const { Pool } = pkg;
 
 export const pool = new Pool({
-  connectionString:
-    "postgresql://neondb_owner:npg_o7Rn2wUrbxpj@ep-royal-violet-aecw6is6-pooler.c-2.us-east-2.aws.neon.tech/weconnect?sslmode=require&channel_binding=require",
+  connectionString: process.env.DATABASE_URL,
   ssl: {
     rejectUnauthorized: false,
   },
