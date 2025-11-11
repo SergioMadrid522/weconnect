@@ -7,10 +7,7 @@ const router = express.Router();
 router.get("/profile", async (req, res) => {
   const { id } = req.query;
   try {
-    const result = await pool.query(
-      "SELECT * FROM users WHERE id = $1",
-      [id]
-    );
+    const result = await pool.query("SELECT * FROM users WHERE id = $1", [id]);
 
     if (result.rows.length === 0) {
       return res.status(404).json({ message: "User not found" });
@@ -61,11 +58,11 @@ router.put("/changeEmail", async (req, res) => {
       "SELECT email FROM users WHERE email = $1 AND id != $2",
       [newEmail, id]
     );
-    
+
     if (existingUser.rows.length > 0) {
       return res.status(400).json({ message: "This email is already taken" });
     }
-    
+
     const updateEmail = await pool.query(
       "UPDATE users SET email = $1 WHERE id = $2",
       [newEmail, id]
@@ -86,10 +83,9 @@ router.put("/changePassword", async (req, res) => {
   const { id, password, newPassword } = req.body;
   try {
     // Get the current password from DB
-    const users = await pool.query(
-      "SELECT password FROM users WHERE id = $1",
-      [id]
-    );
+    const users = await pool.query("SELECT password FROM users WHERE id = $1", [
+      id,
+    ]);
 
     if (users.rows.length === 0) {
       return res.status(404).json({ message: "User not found" });

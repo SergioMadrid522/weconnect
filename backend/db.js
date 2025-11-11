@@ -1,21 +1,12 @@
-import pkg from 'pg';
+import pkg from "pg";
 const { Pool } = pkg;
 
-import {
-  DB_HOST,
-  DB_USER,
-  DB_PASSWORD,
-  DB_NAME,
-  DB_PORT,
-} from "./configuration.js";
-
 export const pool = new Pool({
-  user: DB_USER,
-  password: DB_PASSWORD,
-  host: DB_HOST,
-  port: DB_PORT,
-  database: DB_NAME,
+  connectionString:
+    "postgresql://neondb_owner:npg_o7Rn2wUrbxpj@ep-royal-violet-aecw6is6-pooler.c-2.us-east-2.aws.neon.tech/weconnect?sslmode=require&channel_binding=require",
   ssl: {
-    rejectUnauthorized: false
-  }
+    rejectUnauthorized: false,
+  },
 });
+
+export default pool;

@@ -19,10 +19,9 @@ router.post("/login", async (req, res) => {
   }
 
   try {
-    const findEmail = await pool.query(
-      `SELECT * FROM users WHERE email = $1`,
-      [email]
-    );
+    const findEmail = await pool.query(`SELECT * FROM users WHERE email = $1`, [
+      email,
+    ]);
 
     if (findEmail.rows.length === 0) {
       return res.status(404).json({ message: "Email not registered" });
@@ -56,10 +55,9 @@ router.post("/register", async (req, res) => {
   }
 
   try {
-    const emails = await pool.query(
-      "SELECT * FROM users WHERE email = $1",
-      [email]
-    );
+    const emails = await pool.query("SELECT * FROM users WHERE email = $1", [
+      email,
+    ]);
 
     if (emails.rows.length > 0) {
       return res.status(400).json({ message: "Email is already registered" });
