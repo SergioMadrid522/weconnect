@@ -2,9 +2,6 @@
 
 WeConnect is a real-time chat application featuring user registration and login, built with modern technologies to provide a fast and secure messaging experience.
 
-## Demo
-
-[Coming soon]
 
 ## Technologies Used
 
