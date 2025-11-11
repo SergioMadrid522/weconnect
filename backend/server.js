@@ -1,7 +1,9 @@
 import http from "http";
 import express from "express";
 import cors from "cors";
-import dotenv from "dotenv/config";
+import dotenv from "dotenv";
+
+dotenv.config();
 import { chatServer } from "./chat.js";
 
 import authRoutes from "./routes/auth.routes.js";
